@@ -1,0 +1,125 @@
+/* --- CONFIGURATION COLORS --- */
+:root {
+    --brand-navy: rgb(28, 28, 85);       /* Warna Biru Tua Utama */
+    --brand-light: #c8dcff;              /* Warna Header/Footer */
+    --brand-bg-gradient: linear-gradient(135deg, #d6e3fa, #e7f5ff, #ffffff); /* Background Body */
+            --hover-gradient: linear-gradient(to left, rgb(45, 45, 137), rgb(28, 28, 85)); /* Hover Menu */
+    }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--brand-bg-gradient); /* Background gradasi halus */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--brand-navy);
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--brand-navy);
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.nav-links a:hover {
+    color: whitesmoke;
+    background: var(--hover-gradient);
+}
+
+.btn-lokasi {
+    background-color: var(--brand-navy);
+    color: white;
+    
+}
+.btn-navy-custom {
+    background-color: var(--brand-navy);
+    color: white;
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-navy-custom:hover {
+    background: var(--hover-gradient);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(28, 28, 85, 0.4);
+}
+
+header {
+    position: relative; 
+}
+
+.navbar {
+    position: static; 
+}
+
+/* --- TAMPILAN MENU MOBILE --- */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        /* Agar menempel tepat di bawah header */
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        
+        /* Tampilan */
+        background-color: #dbeafe;
+        flex-direction: column;    
+        align-items: center;       
+        padding: 20px 0;           
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1); 
+        z-index: 9999;
+        
+        /* Default: Sembunyi dengan efek geser */
+        display: none; 
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Saat tombol diklik */
+    .nav-links.active {
+        display: flex !important; 
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* Jarak antar menu */
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        font-size: 1.1rem; 
+    }
+}
+
+/* --- ANIMASI TOMBOL HAMBURGER MENJADI X --- */
+.hamburger {
+    cursor: pointer;
+    z-index: 10000; 
+}
+.hamburger .bar {
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}

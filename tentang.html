@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Profil Berkah Ulam</title>
+</head>
+<body>
+    <header class="d-flex justify-content-between align-items-center py-3 px-4 bg-header-footer shadow-sm">
+        <img id="logo" src="image/logo.png" alt="Logo" style="height: 50px; width: auto;">
+        
+        <nav class="navbar"> 
+            <ul class="nav-links list-unstyled d-none d-md-flex gap-4 m-0">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+            <div class="hamburger d-md-none">
+                <span class="bar d-block bg-dark my-1" style="width: 25px; height: 3px;"></span>
+                <span class="bar d-block bg-dark my-1" style="width: 25px; height: 3px;"></span>
+                <span class="bar d-block bg-dark my-1" style="width: 25px; height: 3px;"></span>
+            </div>
+        </nav>
+    </header>
+    <main class="container my-5">
+        
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">Profil Usaha Kami</h2>
+            <p class="text-secondary">Kami berdiri sejak 2017, berkomitmen menghadirkan kualitas
+               ikan terbaik langsung dari nelayan.</p>
+            
+            <div class="text-start d-inline-block mt-3">
+                <h3 class="h5 fw-bold">Produk Unggulan:</h3>
+                <ul>
+                    <li>Ikan layang frozen</li>
+                    <li>Ikan salem frozen</li>
+                    <li>Ikan salem frozen</li>
+                </ul>
+            </div>
+        </div>
+
+        <form id="formWebinar" action="#" method="post" class="card shadow p-4 mx-auto border-0 rounded-3" style="max-width: 600px;">
+            <h3 class="h4 mb-4">Pendaftaran Webinar Promosi Produk</h3>
+            
+            <label for="nama" class="form-label fw-medium">Nama Lengkap</label>
+            <input type="text" id="nama" class="form-control">
+            <span class="error text-danger small" id="errorNama"></span><br>  
+
+            <label for="email" class="form-label fw-medium">Email</label>
+            <input type="text" id="email" class="form-control">
+            <span class="error text-danger small" id="errorEmail"></span><br>
+
+            <label for="noHP" class="form-label fw-medium">Nomor Telepon</label>
+            <input type="number" id="noHP" class="form-control">
+            <span class="error text-danger small" id="errorNoHP"></span><br>
+                
+            <label for="topik" class="form-label fw-medium">Topik Webinar</label>
+            <select name="topik" id="topik" class="form-select">
+                <option value="tips">Tips Menyimpan & Mengolah Ikan Frozen</option>
+                <option value="gizi">Manfaat Gizi Ikan Laut untuk Keluarga</option>
+                <option value="demo">Demo Masak Praktis Olahan Ikan</option>
+            </select><br>
+                
+            <div class="form-check mb-3">
+                <input type="checkbox" id="setuju" class="form-check-input">
+                <label for="setuju" class="form-check-label">Setuju dengan Syarat & Ketentuan</label>
+            </div>
+            <span class="error text-danger small" id="errorSetuju"></span><br>
+
+            <div class="d-flex gap-2">
+                <button type="reset" class="btn btn-danger px-4">Hapus</button>
+                <button type="submit" class="btn btn-success px-4">Kirim</button>
+            </div>
+        </form>
+    </main>
+    
+    <footer class="text-center py-4 bg-primary-subtle mt-5">
+        <p class="mb-0 text-primary-emphasis">&copy; 2025 Toko Berkah Ulam. Semua hak dilindungi</p>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

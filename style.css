@@ -1,0 +1,156 @@
+/* === VARIABEL WARNA DAN THEME === */
+:root{
+    --brand-navy: rgb(28, 28, 85);
+    --brand-light: #c8dcff;
+    --brand-bg-gradient: linear-gradient(135deg, #d6e3fa, #e7f5ff, #ffffff);
+    --hover-gradient: linear-gradient(to left, rgb(45, 45, 137), rgb(28, 28, 85));
+}
+
+/* === GAYA DASAR HALAMAN === */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--brand-bg-gradient);
+}
+
+.bg-header-footer {
+    background-color: #dbeafe;
+}
+
+header {
+    border-bottom: 3px solid #1e3a8a;
+    position: relative;
+}
+
+.navbar {
+    position: static;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--brand-navy);
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: whitesmoke;
+    background: var(--hover-gradient);
+}
+
+/* === RESPONSIVE MENU MOBILE === */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #dbeafe;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 9999;
+        display: none;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links.active {
+        display: flex !important;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+}
+
+/* === ANIMASI HAMBURGER MENU === */
+.hamburger {
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.hamburger .bar {
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* === KARTU DAN GAMBAR === */
+.card-img-custom {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hover-effect {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px grey;
+}
+
+.card p {
+    display: none;
+}
+
+.card p.tampil {
+    display: block;
+}
+
+/* === TOMBOL KHUSUS === */
+.btn-navy {
+    background-color: var(--brand-navy);
+    color: white;
+    border-radius: 12px;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-navy:hover {
+    background: var(--hover-gradient);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(28, 28, 85, 0.4);
+}
+
+#formMsg {
+    display: none; /* Default sembunyi, nanti dimunculkan jQuery */
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* Merapikan jarak antar input tanpa menggunakan tag <br> */
+.form-group {
+    margin-bottom: 1rem;
+}
